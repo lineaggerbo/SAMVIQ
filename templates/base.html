@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<head>
+	<!-- Metadata -->
+	<title>Image Quality Evaluation</title>
+	<link href="{% static 'css/normalize.css' %}" rel="stylesheet" type="text/css" >
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'> 
+	<link href="{% static 'vendor/jquery-ui/jquery-ui.css' %}" rel="stylesheet" type="text/css" >
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" >
+
+</head>
+<body>
+	<div id="container">
+		{% block content %}{% endblock %}
+	</div>
+</body>
+<script type="text/javascript" src="{% static 'vendor/jquery/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/jquery-ui/jquery-ui.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load evaluation_extras %}
+
+{% block content %}
+<div id="scene-information">
+	<p>Image Quality Evaluation</p>
+	<p><span>Scene:</span> {{scene_id}}/{{num_scenes}}</p>
+</div>
+
+<div id="image-box">
+	<div id="tabs">
+		<div id="tab-ref" class="tab-content tab-current">
+			<div class="img">
+				<img src="/media/{{ scene_reference_image.image_file }}" alt="{{ scene_reference_image.image_file }}">
+			</div>
+			<div class="rating">
+				<input class="score" id="score-{{scene_reference_image.id}}" type="text" readonly>
+				<div class="slider" id="slider-{{scene_reference_image.id}}"></div>
+				<ul>
+					<li>Excellent</li>
+					<li>Good</li>
+					<li>Fair</li>
+					<li>Poor</li>
+					<li>Bad</li>
+				</ul>
+			</div>
+		</div>
+		{% for image in scene_image_list %}
+		<div id="tab-{{image.id}}" class="tab-content">
+			<div class="img">
+				<img src="/media/{{ image.image_file }}" alt="{{ image.image_file }}">
+			</div>
+			<div class="rating">
+				<input class="score" id="score-{{image.id}}" type="text" readonly>
+				<div class="slider" id="slider-{{image.id}}"></div>
+				<ul>
+					<li>Excellent</li>
+					<li>Good</li>
+					<li>Fair</li>
+					<li>Poor</li>
+					<li>Bad</li>
+				</ul>
+			</div>
+		</div>
+		{% endfor %}
+
+
+	</div>
+	<div id="navigation">
+		<form action="{% url 'evaluations:rate' scene_id %}" method="post">
+		{% csrf_token %}
+		<ul>
+			<li class="button tab-link button-current" data-tab="tab-ref">Reference<input class="navigation-score" name="score-{{scene_reference_image.id}}" value="x"/></li>
+			{% for image in scene_image_list %}
+			<li class="button tab-link" data-tab="tab-{{image.id}}">{{ forloop.counter|to_char }}<input class="navigation-score" name="score-{{image.id}}" value="x"></li>
+			{% endfor %}
+		</ul>
+
+		{% if last_scene %}
+		<input type="submit" class="button next-scene button-disabled" value="End evaluation"/>
+		{% else %}
+		<input type="submit" class="button next-scene button-disabled" value="Next scene"/>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
