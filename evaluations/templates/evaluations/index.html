@@ -1,14 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Welcome to the image quality evaluation</h1>
+<h1>Velkommen til billedkvalitetsevalueringen</h1>
 <div class="info-box">
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis vehicula sem. Donec et orci mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam tincidunt mi eu mauris porta luctus. Cras vitae dui et mauris scelerisque aliquam in at diam. Suspendisse viverra mauris et est bibendum cursus. Donec quis nisi eleifend, aliquam lorem in, aliquet nunc. Phasellus varius malesuada ex non ultrices. Morbi at ligula purus. Nam eget libero non magna posuere consequat vitae in enim. Vestibulum accumsan venenatis lectus vitae dignissim. Nunc a aliquet nibh.
+		I forbindelse med mit speciale på uddannelsen til Civilingeniør i Computer Teknologi ved Aarhus Universitet, skal jeg indsamle evalueringer af billedkvalitet. Evalueringerne består af to forskellige slags; vurderinger foretaget af mennersker, som ser billederne og vurderer kvaliteten, samt vurderinger fra en computer, som beregner kvaliteten på billederne.
 	</p>
 	<p>
-		Pellentesque at venenatis velit. Phasellus tincidunt facilisis ex. Ut ornare cursus dolor, id elementum enim posuere ac. Pellentesque efficitur erat in feugiat vestibulum. Proin sodales erat non ante ultricies posuere. Quisque nec mi enim. Aliquam congue, enim eu eleifend pretium, ante erat bibendum orci, vitae pulvinar magna lacus quis mi. Etiam accumsan dolor in urna lacinia feugiat. Curabitur varius ante non diam euismod gravida.
+		Jeg er utrolig glad for, at du har vist interesse for at hjælpe mig i mit speciale. Du skal være opmærksom på at denne evalueringssession tager mellem 15 og 20 minutter, hvilket jeg håber at du vil tage dig tid til.
+	</p>
+	<p>
+		Du har desværre kun mulighed for at hjælpe mig med dette, hvis du ikke arbejder med billeder til daglig (er fotograf eller lign.). Derfor er jeg nødt til at spørge dig - arbejder du med billeder til daglig?
 	</p>
 </div>
-<a href="/1/" class="button">Start evaluation</a>
+<div class="index-buttons">
+	<a href="/tutorial/" class="button"><span class="emph">NEJ</span>, jeg arbejder <span class="emph">IKKE</span> med billeder til daglig</a>
+	<a href="/end-nopa/" class="button"><span class="emph">JA</span>, jeg arbejder med billeder til daglig</a>
+</div>
 {% endblock %}

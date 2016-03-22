@@ -6,10 +6,26 @@ from .models import Image
 from .models import Observer
 from .models import Rating
 
-
-
 def index(request):
 	template = loader.get_template('evaluations/index.html')
+	return HttpResponse(template.render(request))
+
+def tutorial(request):
+	template = loader.get_template('evaluations/tutorial.html')
+	return HttpResponse(template.render(request))
+
+def testscene(request):
+	scene_reference_image = Image.objects.get(scene=0, reference=True)
+	scene_image_list = Image.objects.filter(scene=0, reference=False)
+	template = loader.get_template('evaluations/testscene.html')
+
+	context = {	'scene_reference_image': scene_reference_image,
+				'scene_image_list': scene_image_list,}
+
+	return HttpResponse(template.render(context, request))
+
+def info(request):
+	template = loader.get_template('evaluations/info.html')
 	return HttpResponse(template.render(request))
 
 def scene(request, scene_id):
@@ -19,7 +35,6 @@ def scene(request, scene_id):
 		o.save()
 		request.session['observer_id'] = o.id
 
-	print(scene_id)
 	scene_reference_image = Image.objects.get(scene=scene_id, reference=True)
 	scene_image_list = Image.objects.filter(scene=scene_id, reference=False)
 	num_scenes = Image.objects.values_list('scene',flat = True).order_by('-scene')[:1][0]
@@ -69,4 +84,8 @@ def end(request):
 	o.save()
 
 	template = loader.get_template('evaluations/end.html')
+	return HttpResponse(template.render(request))
+
+def end_nopa(request):
+	template = loader.get_template('evaluations/end-nopa.html')
 	return HttpResponse(template.render(request))

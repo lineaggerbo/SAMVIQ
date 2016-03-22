@@ -3,8 +3,8 @@
 
 {% block content %}
 <div id="scene-information">
-	<p>Billedkvalitetsevaluering</p>
-	<p><span>Scene:</span> {{scene_id}}/{{num_scenes}}</p>
+	<p>Billedkvalitetsevaluering - test scene</p>
+	<p><span>Scene:</span> 1/1</p>
 </div>
 
 <div id="image-box">
@@ -47,20 +47,13 @@
 
 	</div>
 	<div id="navigation">
-		<form action="{% url 'evaluations:rate' scene_id %}" method="post">
-		{% csrf_token %}
 		<ul>
 			<li class="button tab-link button-current" data-tab="tab-ref">Reference<input class="navigation-score" name="score-{{scene_reference_image.id}}" value="x"/></li>
 			{% for image in scene_image_list %}
 			<li class="button tab-link" data-tab="tab-{{image.id}}">{{ forloop.counter|to_char }}<input class="navigation-score" name="score-{{image.id}}" value="x"></li>
 			{% endfor %}
 		</ul>
-
-		{% if last_scene %}
-		<input type="submit" class="button next-scene button-disabled" value="Afslut evalueringssession"/>
-		{% else %}
-		<input type="submit" class="button next-scene button-disabled" value="Næste scene"/>
-		{% endif %}
+		<a href="/info/" class="button next-scene button-disabled">Afslut testscene</a>
 	</div>
 </div>
 {% endblock %}

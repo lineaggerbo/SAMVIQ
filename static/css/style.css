@@ -4,14 +4,30 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 h1{
-	margin-top: 100px;
+	margin-top: 80px;
 	font-weight: 300;
 }
 #container{
 	background-color: #cccccc;
 	width: 1000px;
 	margin: auto;
+	margin-top: 20px;
+	display: none;
+	padding-bottom: 50px;
+}
+#mobile-container{
+	background-color: #cccccc;
+	width: 800px;
+	margin: auto;
 	margin-top: 30px;
+}
+@media screen and (min-width: 992px) {
+	#container{
+		display: block;
+	}
+	#mobile-container{
+		display: none;
+	}
 }
 #scene-information{
 	width: 800px;
@@ -132,6 +148,9 @@ h1{
 	cursor: default;
 	color: #aaaaaa;
 }
+.emph{
+	font-weight: 600;
+}
 .next-scene{
 	float: right;
 }
@@ -156,6 +175,28 @@ h1{
 	text-align: justify;
 }
 
+.index-buttons .button{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+/*----------------------------------------
+/* Instructions
+------------------------------------------*/
+.instructions tr td{
+	width: 390px;
+	padding-bottom: 30px;
+	text-align: center;
+}
+.instructions tr td:first-child{
+	padding-right: 30px;
+}
+.instructions tr td:last-child{
+	padding-left: 30px;
+}
+.instructions tr td p{
+	text-align: justify;
+}
 /*----------------------------------------
 /* jQuery UI redefinition
 ------------------------------------------*/

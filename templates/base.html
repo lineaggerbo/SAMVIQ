@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <head>
 	<!-- Metadata -->
-	<title>Image Quality Evaluation</title>
+	<title>Billedkvalitetsevaluering</title>
 	<link href="{% static 'css/normalize.css' %}" rel="stylesheet" type="text/css" >
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'> 
 	<link href="{% static 'vendor/jquery-ui/jquery-ui.css' %}" rel="stylesheet" type="text/css" >
@@ -13,6 +13,14 @@
 <body>
 	<div id="container">
 		{% block content %}{% endblock %}
+	</div>
+	<div id="mobile-container">
+		<h1>Velkommen til billedkvalitetsevaluering</h1>
+		<div class="info-box">
+			<p>Ups, der er opstået et problem...</p>
+			<p>... enten ser du denne hjemmeside på din mobil eller tablet. Denne billedkvalitetsevaluering kan desværre kun udføres på en computer. I så fald håber jeg at du vil komme tilbage og udføre den på et andet tidspunkt, når du sidder ved en computer.</p>
+			<p>... eller også er dit browservindue for smalt. I så fald vil jeg foreslå at du maksimerer browservinduet. Dette burde gøre det muligt for dig at udføre billedkvalitetsevalueringen.</p>
+		</div>
 	</div>
 </body>
 <script type="text/javascript" src="{% static 'vendor/jquery/jquery.js' %}"></script>

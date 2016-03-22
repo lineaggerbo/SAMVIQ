@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Instruktioner</h1>
+<div class="info-box">
+	<table class="instructions">
+		<tr>
+			<td>
+				<p>
+					Inden du starter på evalueringen kommer der her nogle instruktioner. Evalueringen er delt ind i flere scener. Et eksempel på en scene kan ses på billedet til højre. En scene består af en antal billeder, som alle skal evalueres inden man kan gå videre til næste scene. I alle scener vil der være et referencebillede. Referencebilledet er det oprindelige billede, men skal alligevel evalueres. Det første billede i en scene vil altid være referencebilledet.
+				</p>
+			</td>
+			<td>
+				<img src="/static/img/instruction1.png" alt="Instruction1">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="/static/img/instruction2.png" alt="Instruction2">
+			</td>
+			<td>
+				<p>
+					Du kan navigerer imellem de forskellige billeder ved hjælp af navigationsknapperne under billedet. Knappen "Reference" navigerer altid til referencebilledet. De resterende knapper navigerer til andre billeder. Når en ny scene startes, vil der under hver navigationsknap vises et "X". Når du har evalueret kvaliteten på et billede, vil dette "X" blive erstattet af den score, som du har vurderet billedets kvalitet til.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					Til at bedømme kvaliteten af et billede anvendes en slider placeret til højre for billedet. Denne slider kan bruges til at justere den score, som du mener passer til kvaliteten af billedet. Bedømmelsesskalaen går fra 0 til 100 og til hjælp er fem kategorier fordelt ligeligt over hele skalaen. Scoren svarende til sliderens placering kan aflæses over slideren og under den navigationsknap, som refererer til billedet. 
+				</p>
+			</td>
+			<td>
+				<img src="/static/img/instruction3.png" alt="Instruction3">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="/static/img/instruction4.png" alt="Instruction4">
+			</td>
+			<td>
+				<p>
+					I øverste højre hjørne finder du en oversigt over, hvor langt du er i evalueringssessionen. Her kan du se, hvilken scene du er ved, samt hvor mange scener der er i alt.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					Når alle billeder i en scene er evalueret, kan denne scene afsluttes. Dette gøres ved at klikke på knappen i højre side under billedet. Afhængig af hvilken scene du er ved vil teksten variere.
+				</p>
+				<p>
+					Du vil nu blive navigeret til en testscene, hvor du kan prøve at udføre en evaluering, inden den rigtige evaluering starter. God fornøjelse!
+				</p>
+			</td>
+			<td>
+				<img src="/static/img/instruction5.png" alt="Instruction5">
+			</td>
+		</tr>
+	</table>
+</div>
+<a href="/testscene/" class="button">Start testevaluering</a>
+{% endblock %}
