@@ -2,6 +2,8 @@
 //  return 'Dialog text here.';
 //};
 
+
+
 function checkAllInput(){
   if ($('#navigation ul li.scored').length == $('#navigation ul li').length) {
     $('.next-scene').removeClass('button-disabled');
@@ -27,6 +29,8 @@ function shuffleTabs(){
   // Assign each link with new reference
   $('#navigation ul li:not(:first)').each(function(i,val){
        $(this).attr('data-tab',tab_names[i]);
+       var id = tab_names[i].match(/\d+/); 
+       $(this).find("input").attr('name', "score-" + id);
   });
 }
 
